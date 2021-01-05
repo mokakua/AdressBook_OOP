@@ -1,0 +1,5 @@
+plan/
+bin/
+obj/
+AdressBook_OOP*
+*.o
