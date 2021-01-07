@@ -21,6 +21,7 @@ class UzytkownikManager{
 
 public:
 
+    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 
