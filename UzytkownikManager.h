@@ -21,6 +21,7 @@ class UzytkownikManager{
 
 public:
 
+    UzytkownikManager(string nazwaPlikuKsiazkiAdresowej);
     void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

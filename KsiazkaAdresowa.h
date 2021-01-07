@@ -13,7 +13,7 @@ class KsiazkaAdresowa {
 
 public:
 
-    KsiazkaAdresowa();
+    KsiazkaAdresowa(string nazwaPlikuKsiazkiAdresowej);
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 
