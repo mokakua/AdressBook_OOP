@@ -1,5 +1,10 @@
 #include "UzytkownikManager.h"
 
+UzytkownikManager::UzytkownikManager(string nazwaPlikuKsiazkiAdresowej):
+    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej){
+
+    }
+
 void UzytkownikManager::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
