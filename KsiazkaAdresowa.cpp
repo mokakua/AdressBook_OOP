@@ -12,3 +12,12 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikManager.wypiszWszystkichUzytkownikow();
 }
+
+void KsiazkaAdresowa::logowanieUzytkownika(){
+    uzytkownikManager.logowanieUzytkownika();
+}
+
+
+void KsiazkaAdresowa::podajIdZalogowanegoUzytkownika(){
+    uzytkownikManager.podajIdZalogowanegoUzytkownika();
+}
