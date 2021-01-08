@@ -1,4 +1,6 @@
-9|1|Michal|Pisarski|535868223|mokakua|asd-123|
-9|2|Aga|Turek|123|243|345|
-1|1|Nowy|Adresat|234|Kal@wp|Kalisz|
-1|1|Kolejny|Czwarty|zawodnik|do|listy|
+1|1|Mich|Pis|535868223|mich2wp.pl|Kalisz|
+3|1|Aga|T|997|aga@|Wro|
+4|3|Nowe|Imie|nowy|email|local|
+5|0|Wert|Asd|sdfg|fgh|hjk|
+7|0|Sdf|Ert|dfb|svd|asd|
+8|2|Kolejny|User|Dodaje|nowego|Adresata|

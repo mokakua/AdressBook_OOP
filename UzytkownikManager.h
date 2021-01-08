@@ -17,7 +17,6 @@ class UzytkownikManager{
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    string wczytajLinie();
 
 public:
 
@@ -29,8 +28,7 @@ public:
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-
-    int podajIdZalogowanegoUzytkownika();  //testing
+    int pobierzIdZalogowanegoUzytkownika();
 
 };
 #endif

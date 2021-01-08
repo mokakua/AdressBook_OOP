@@ -23,7 +23,7 @@ public:
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
 
-    void podajIdZalogowanegoUzytkownika();  //testing
+    void pobierzIdZalogowanegoUzytkownika();
     void dodajAdresata();
 
 };

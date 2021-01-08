@@ -2,6 +2,7 @@
 #define ADRESATMANAGER_H
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
@@ -14,7 +15,6 @@ class AdresatManager{
     PlikZAdresatami plikZAdresatami;
     int idOstatniegoAdresata;
 
-    string wczytajLinie();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
 
@@ -22,7 +22,6 @@ public:
     AdresatManager(string nazwaPlikuZAdresatami);
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-
 
 };
 #endif
