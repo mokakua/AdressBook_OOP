@@ -119,8 +119,8 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(){
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-void UzytkownikManager::podajIdZalogowanegoUzytkownika(){
-    cout << "Zalogowany uzytkownik z ID = " << idZalogowanegoUzytkownika <<endl;
+int UzytkownikManager::podajIdZalogowanegoUzytkownika(){
+    return idZalogowanegoUzytkownika;
 }
 
 void UzytkownikManager::wczytajUzytkownikowZPliku(){

@@ -1,7 +1,8 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuKsiazkiAdresowej):
-    uzytkownikManager(nazwaPlikuKsiazkiAdresowej) {
+KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami):
+    uzytkownikManager(nazwaPlikuZUzytkownikami),
+    adresatManager(nazwaPlikuZAdresatami){
     uzytkownikManager.wczytajUzytkownikowZPliku();
 }
 
@@ -27,5 +28,9 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 
 
 void KsiazkaAdresowa::podajIdZalogowanegoUzytkownika(){
-    uzytkownikManager.podajIdZalogowanegoUzytkownika();
+    cout << "Zalogowany: " << uzytkownikManager.podajIdZalogowanegoUzytkownika() <<endl;
+}
+
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatManager.dodajAdresata(uzytkownikManager.podajIdZalogowanegoUzytkownika());
 }

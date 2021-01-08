@@ -4,16 +4,19 @@
 
 #include "Uzytkownik.h"
 #include "UzytkownikManager.h"
+#include "Adresat.h"
+#include "AdresatManager.h"
 
 using namespace std;
 
 class KsiazkaAdresowa {
 
     UzytkownikManager uzytkownikManager;
+    AdresatManager adresatManager;
 
 public:
 
-    KsiazkaAdresowa(string nazwaPlikuKsiazkiAdresowej);
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
@@ -21,6 +24,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
 
     void podajIdZalogowanegoUzytkownika();  //testing
+    void dodajAdresata();
 
 };
 #endif

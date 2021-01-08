@@ -30,7 +30,7 @@ public:
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
 
-    void podajIdZalogowanegoUzytkownika();  //testing
+    int podajIdZalogowanegoUzytkownika();  //testing
 
 };
 #endif

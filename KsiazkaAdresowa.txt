@@ -1,0 +1,4 @@
+9|1|Michal|Pisarski|535868223|mokakua|asd-123|
+9|2|Aga|Turek|123|243|345|
+1|1|Nowy|Adresat|234|Kal@wp|Kalisz|
+1|1|Kolejny|Czwarty|zawodnik|do|listy|
