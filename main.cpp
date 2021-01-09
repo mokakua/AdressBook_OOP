@@ -22,7 +22,5 @@ int main()
     //ksiazkaAdresowa.wyswietlIdZalogowanegoUzytkownika();
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-
     return 0;
 }
