@@ -28,10 +28,14 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 }
 
 
-void KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
+void KsiazkaAdresowa::wyswietlIdZalogowanegoUzytkownika(){
     cout << "Zalogowany: " << uzytkownikManager.pobierzIdZalogowanegoUzytkownika() <<endl;
 }
 
 void KsiazkaAdresowa::dodajAdresata(){
     adresatManager.dodajAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
+    adresatManager.wyswietlWszystkichAdresatow();
 }

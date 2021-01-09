@@ -1,8 +1,8 @@
 #include "UzytkownikManager.h"
 
 UzytkownikManager::UzytkownikManager(string nazwaPlikuKsiazkiAdresowej):
-    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej),
-    idZalogowanegoUzytkownika(0){}
+    idZalogowanegoUzytkownika(0),
+    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej){}
 
 void UzytkownikManager::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();

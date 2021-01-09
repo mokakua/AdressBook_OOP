@@ -17,11 +17,14 @@ class AdresatManager{
 
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlDaneAdresata(Adresat adresat);
 
 public:
     AdresatManager(string nazwaPlikuZAdresatami);
     void dodajAdresata(int idZalogowanegoUzytkownika);
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+
 
 };
 #endif

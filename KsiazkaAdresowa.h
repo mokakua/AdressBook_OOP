@@ -23,8 +23,9 @@ public:
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
 
-    void pobierzIdZalogowanegoUzytkownika();
+    void wyswietlIdZalogowanegoUzytkownika();
     void dodajAdresata();
+    void wyswietlWszystkichAdresatow();
 
 };
 #endif
