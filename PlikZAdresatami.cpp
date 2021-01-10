@@ -4,7 +4,6 @@ PlikZAdresatami::PlikZAdresatami(string NAZWAPLIKUZADRESATAMI)
 : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){
 }
 
-
 void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat){
 
     string liniaZDanymiAdresata = "";

@@ -9,3 +9,5 @@
 12|2|Ala|Ma|Kota|I|Psa|
 14|2|Ola|Ma|Zolwia|I|Cme|
 15|1|Najnowszy|Nabytek|Ksiazki|Adresowej|Michala|
+16|4|Michal|Kowalski|123809|@wp.pl|Jelenia Gora|
+17|4|Tomek|Nowak|098765|@gmail.com|Wielun|

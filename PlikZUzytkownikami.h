@@ -18,7 +18,7 @@ class PlikZUzytkownikami{
 
 
 public:
-    PlikZUzytkownikami(string nazwaPlikuKsiazkiAdresowej);
+    PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI);
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();

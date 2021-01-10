@@ -29,7 +29,7 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 
 
 void KsiazkaAdresowa::wyswietlIdZalogowanegoUzytkownika(){
-    cout << "Zalogowany: " << uzytkownikManager.pobierzIdZalogowanegoUzytkownika() <<endl;
+    cout << "Zalogowany nr: " << uzytkownikManager.pobierzIdZalogowanegoUzytkownika() <<endl;
 }
 
 void KsiazkaAdresowa::dodajAdresata(){
