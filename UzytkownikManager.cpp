@@ -1,8 +1,8 @@
 #include "UzytkownikManager.h"
 
 UzytkownikManager::UzytkownikManager(string nazwaPlikuKsiazkiAdresowej):
-    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej),
-    idZalogowanegoUzytkownika(0){}
+    idZalogowanegoUzytkownika(0),
+    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej){}
 
 void UzytkownikManager::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -21,11 +21,11 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika() {
 
     do {
         cout << "Podaj login: ";
-        uzytkownik.ustawLogin(wczytajLinie());
+        uzytkownik.ustawLogin(MetodyPomocnicze::wczytajLinie());
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
-    uzytkownik.ustawHaslo(wczytajLinie());
+    uzytkownik.ustawHaslo(MetodyPomocnicze::wczytajLinie());
 
     return uzytkownik;
 }
@@ -47,12 +47,6 @@ bool UzytkownikManager::czyIstniejeLogin(string login) {
     return false;
 }
 
-string UzytkownikManager::wczytajLinie() {
-    string wejscie = "";
-    getline(cin, wejscie);
-    return wejscie;
-}
-
 void UzytkownikManager::wypiszWszystkichUzytkownikow() {
     for (int i = 0; i < uzytkownicy.size(); i++) {
         cout << uzytkownicy[i].pobierzId() << endl;
@@ -66,7 +60,7 @@ void UzytkownikManager::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
-    login = wczytajLinie();
+    login = MetodyPomocnicze::wczytajLinie();
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
     while (itr != uzytkownicy.end())
@@ -76,7 +70,7 @@ void UzytkownikManager::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = wczytajLinie();
+                haslo = MetodyPomocnicze::wczytajLinie();
 
                 if (itr -> pobierzHaslo() == haslo)
                 {
@@ -105,7 +99,7 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(){
 
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    noweHaslo = wczytajLinie();
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
     {
@@ -119,8 +113,8 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika(){
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-void UzytkownikManager::podajIdZalogowanegoUzytkownika(){
-    cout << "Zalogowany uzytkownik z ID = " << idZalogowanegoUzytkownika <<endl;
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika(){
+    return idZalogowanegoUzytkownika;
 }
 
 void UzytkownikManager::wczytajUzytkownikowZPliku(){

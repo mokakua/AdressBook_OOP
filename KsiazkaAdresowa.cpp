@@ -1,7 +1,8 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuKsiazkiAdresowej):
-    uzytkownikManager(nazwaPlikuKsiazkiAdresowej) {
+KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami):
+    uzytkownikManager(nazwaPlikuZUzytkownikami),
+    adresatManager(nazwaPlikuZAdresatami){
     uzytkownikManager.wczytajUzytkownikowZPliku();
 }
 
@@ -15,6 +16,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
 
 void KsiazkaAdresowa::logowanieUzytkownika(){
     uzytkownikManager.logowanieUzytkownika();
+    adresatManager.wczytajAdresatowZalogowanegoUzytkownikaZPliku(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika(){
@@ -26,6 +28,14 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
 }
 
 
-void KsiazkaAdresowa::podajIdZalogowanegoUzytkownika(){
-    uzytkownikManager.podajIdZalogowanegoUzytkownika();
+void KsiazkaAdresowa::wyswietlIdZalogowanegoUzytkownika(){
+    cout << "Zalogowany nr: " << uzytkownikManager.pobierzIdZalogowanegoUzytkownika() <<endl;
+}
+
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatManager.dodajAdresata(uzytkownikManager.pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow(){
+    adresatManager.wyswietlWszystkichAdresatow();
 }
