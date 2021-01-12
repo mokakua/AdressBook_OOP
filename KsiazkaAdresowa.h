@@ -1,6 +1,7 @@
 #ifndef KSIAZKAADRESOWA_H
 #define KSIAZKAADRESOWA_H
 #include <iostream>
+#include <windows.h>
 
 #include "Uzytkownik.h"
 #include "UzytkownikManager.h"
@@ -14,6 +15,7 @@ class KsiazkaAdresowa {
     UzytkownikManager uzytkownikManager;
     AdresatManager *adresatManager;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
+    char pobierzZnak();
 
 public:
 
@@ -24,10 +26,15 @@ public:
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
-
     void wyswietlIdZalogowanegoUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+
+    void wyswietlMenu();
+    void wyswietlMenuStartowe();
+    void wywolajFunkcjeStartowe();
+    void wyswietlMenuGlowne();
+    void wywolajFunkcjeGlowne();
 
 };
 #endif
