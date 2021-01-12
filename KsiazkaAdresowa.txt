@@ -11,3 +11,5 @@
 15|1|Najnowszy|Nabytek|Ksiazki|Adresowej|Michala|
 16|4|Michal|Kowalski|123809|@wp.pl|Jelenia Gora|
 17|4|Tomek|Nowak|098765|@gmail.com|Wielun|
+18|1|Nowy|Ziomek|do|kolekcji|micha|
+19|1|Tomasz|Rokita|123456798|@onet.pl|Baltycka 10a|

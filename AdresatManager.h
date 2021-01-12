@@ -9,20 +9,19 @@
 
 using namespace std;
 
-class AdresatManager{
+class AdresatManager {
 
     vector <Adresat> adresaci;
     PlikZAdresatami plikZAdresatami;
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
 
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
-    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatManager(string nazwaPlikuZAdresatami);
-    void dodajAdresata(int idZalogowanegoUzytkownika);
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika);
+    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
 
 };

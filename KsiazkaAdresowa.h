@@ -12,11 +12,13 @@ using namespace std;
 class KsiazkaAdresowa {
 
     UzytkownikManager uzytkownikManager;
-    AdresatManager adresatManager;
+    AdresatManager *adresatManager;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
 
 public:
 
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami);
+    ~KsiazkaAdresowa();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();

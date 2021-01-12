@@ -2,7 +2,9 @@
 
 UzytkownikManager::UzytkownikManager(string nazwaPlikuKsiazkiAdresowej):
     idZalogowanegoUzytkownika(0),
-    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej){}
+    plikZUzytkownikami(nazwaPlikuKsiazkiAdresowej){
+    wczytajUzytkownikowZPliku();
+    }
 
 void UzytkownikManager::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -121,4 +123,10 @@ void UzytkownikManager::wczytajUzytkownikowZPliku(){
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
-
+bool UzytkownikManager::czyUzytkownikZalogowany(){
+    if (idZalogowanegoUzytkownika > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
