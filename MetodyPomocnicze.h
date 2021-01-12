@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class MetodyPomocnicze{
+class MetodyPomocnicze {
 
 public:
 

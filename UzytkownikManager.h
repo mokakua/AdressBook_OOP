@@ -17,17 +17,18 @@ class UzytkownikManager{
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
+    void wczytajUzytkownikowZPliku();
 
 public:
 
     UzytkownikManager(string nazwaPlikuKsiazkiAdresowej);
-    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
+    bool czyUzytkownikZalogowany();
 
 };
 #endif

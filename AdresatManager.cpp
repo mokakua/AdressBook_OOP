@@ -1,29 +1,31 @@
 #include "AdresatManager.h"
 
-AdresatManager::AdresatManager(string nazwaPlikuZAdresatami):
-plikZAdresatami(nazwaPlikuZAdresatami),
-idOstatniegoAdresata(0){}
+AdresatManager::AdresatManager(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika):
+    plikZAdresatami(nazwaPlikuZAdresatami),
+    ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+}
 
-void AdresatManager::dodajAdresata(int idZalogowanegoUzytkownika)
-{
+void AdresatManager::dodajAdresata() {
     Adresat adresat;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    idOstatniegoAdresata++;
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat)) {
+        cout << "Pomyslnie dodano adresata." << endl;
+    } else {
+        cout << "Nie udalo sie dodac adresata." << endl;
+    }
 }
 
-Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
-{
+Adresat AdresatManager::podajDaneNowegoAdresata() {
     Adresat adresat;
 
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata()+1);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -45,42 +47,31 @@ Adresat AdresatManager::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
     return adresat;
 }
 
-string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
-{
-    if (!tekst.empty())
-    {
+string AdresatManager::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst) {
+    if (!tekst.empty()) {
         transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
         tekst[0] = toupper(tekst[0]);
     }
     return tekst;
 }
 
-void AdresatManager::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika){
-    adresaci.clear();
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika, idOstatniegoAdresata);
-}
-
-void AdresatManager::wyswietlWszystkichAdresatow(){
+void AdresatManager::wyswietlWszystkichAdresatow() {
 
     system("cls");
-    if (!adresaci.empty())
-    {
+    if (!adresaci.empty()) {
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
-        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
-        {
+        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++) {
             wyswietlDaneAdresata(*itr);
         }
         cout << endl;
-    }
-    else
-    {
+    } else {
         cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
     }
     system("pause");
 }
 
-void AdresatManager::wyswietlDaneAdresata(Adresat adresat){
+void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
 
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
