@@ -110,7 +110,6 @@ void KsiazkaAdresowa::wyswietlMenuGlowne() {
     cout << "Twoj wybor: ";
 }
 
-
 void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     char wybor;
     wybor = pobierzZnak();
@@ -120,19 +119,19 @@ void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     }
     break;
     case '2': {
-        //znajdzPoImieniu(osoby);
+        adresatManager->znajdzPoImieniu();
     }
     break;
     case '3': {
-        //znajdzPoNazwisku(osoby);
+       adresatManager->znajdzPoNazwisku();
     }
     break;
     case '4': {
-        //wypiszListe(osoby);
+        wyswietlWszystkichAdresatow();
     }
     break;
     case '5': {
-        //usunAdresata(osoby, ostatnieUzyteIdOsoby);
+        adresatManager->usunAdresata();
     }
     break;
     case '6': {

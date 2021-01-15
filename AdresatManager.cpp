@@ -80,3 +80,89 @@ void AdresatManager::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
+
+void AdresatManager::znajdzPoImieniu() {
+    int znalezionychOsob = 0;
+    string szukaneImie;
+    system("cls");
+    cout << "Podaj imie szukanej osoby: ";
+    getline(cin,szukaneImie);
+    cout << endl;
+    szukaneImie = zamienPierwszaLitereNaDuzaAPozostaleNaMale(szukaneImie);
+    for (vector<Adresat>::iterator osoba = adresaci.begin(), zaOstatniaOsoba = adresaci.end(); osoba!=zaOstatniaOsoba; osoba++) {
+        if (osoba->pobierzImie() == szukaneImie) {
+            znalezionychOsob ++;
+            wyswietlDaneAdresata(*osoba);
+        }
+    }
+    cout << "Znalezionych wynikow: " <<znalezionychOsob << '.' <<endl;
+    system("pause");
+}
+
+void AdresatManager::znajdzPoNazwisku() {
+    int znalezionychOsob = 0;
+    string szukaneNazwisko;
+    system("cls");
+    cout << "Podaj nazwisko szukanej osoby: ";
+    getline(cin,szukaneNazwisko);
+    cout << endl;
+    szukaneNazwisko = zamienPierwszaLitereNaDuzaAPozostaleNaMale(szukaneNazwisko);
+    for (vector<Adresat>::iterator osoba = adresaci.begin(), zaOstatniaOsoba = adresaci.end(); osoba!=zaOstatniaOsoba; osoba++) {
+        if (osoba->pobierzNazwisko() == szukaneNazwisko) {
+            znalezionychOsob ++;
+            wyswietlDaneAdresata(*osoba);
+        }
+    }
+    cout << "Znalezionych wynikow: " <<znalezionychOsob << '.' <<endl;
+    system("pause");
+}
+
+int AdresatManager::podajIdWybranegoAdresata()
+{
+    int idWybranegoAdresata = 0;
+    cout << "Podaj numer ID Adresata: ";
+    idWybranegoAdresata  = MetodyPomocnicze::wczytajLiczbeCalkowita();
+    return idWybranegoAdresata;
+}
+
+void AdresatManager::usunAdresata()
+{
+    int idUsuwanegoAdresata = 0;
+    int numerLiniiUsuwanegoAdresata = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = podajIdWybranegoAdresata();
+
+    char znak;
+    bool czyIstniejeAdresat = false;
+
+    for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+    {
+        if (itr -> pobierzId() == idUsuwanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = MetodyPomocnicze::wczytajZnak();
+            if (znak == 't')
+            {
+                plikZAdresatami.usunWybranegoAdresataZPliku(idUsuwanegoAdresata);
+                adresaci.erase(itr);
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+                return;
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("p       ause");
+                return;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+}

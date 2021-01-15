@@ -7,17 +7,18 @@
 
 using namespace std;
 
-int main() {
+int maintest() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "KsiazkaAdresowa.txt");
     while (true) {
         ksiazkaAdresowa.wyswietlMenu();
     }
-
     return 0;
 }
 
-int maintest() {        //testowanie funkcji
-    AdresatManager adresatManager("Ksiazka_adresowa_testowa.txt", 1);
+int main() {        //testowanie funkcji
+    AdresatManager adresatManager("KsiazkaAdresowa.txt", 1);
+    adresatManager.wyswietlWszystkichAdresatow();
+    adresatManager.usunAdresata();
     adresatManager.wyswietlWszystkichAdresatow();
     adresatManager.dodajAdresata();
 
