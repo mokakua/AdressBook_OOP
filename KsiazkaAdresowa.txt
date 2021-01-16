@@ -1,4 +1,3 @@
-1|1|Mich|Pis|535868223|mich2wp.pl|Kalisz|
 3|1|Aga|T|997|aga@|Wro|
 4|3|Nowe|Imie|nowy|email|local|
 5|0|Wert|Asd|sdfg|fgh|hjk|
@@ -13,3 +12,4 @@
 18|1|Nowy|Ziomek|do|kolekcji|micha|
 19|1|Tomasz|Rokita|123456798|@onet.pl|Baltycka 10a|
 20|5|Rozalia|Pisarska|brak|brak|Kalisz|
+21|1|Michal|Pis|21|21|21|

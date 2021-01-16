@@ -6,12 +6,12 @@
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
-class PlikZAdresatami {
+class PlikZAdresatami:public PlikTekstowy {
 
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
     const string NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI = "Adresaci_tymczasowo.txt";
 
@@ -24,7 +24,7 @@ class PlikZAdresatami {
     int pobierzZPlikuIdOstatniegoAdresata();
 public:
 
-    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI);
+    PlikZAdresatami(string nazwaPlikuZAdresatami);
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdOstatniegoAdresata();
