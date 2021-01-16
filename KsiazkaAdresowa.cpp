@@ -56,3 +56,96 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
         cout << "Aby wyswietlic adresatow, nalezy sie zalogowac." <<endl;
     }
 }
+
+void KsiazkaAdresowa::wyswietlMenu() {
+    if (!uzytkownikManager.czyUzytkownikZalogowany()) {
+        KsiazkaAdresowa::wyswietlMenuStartowe();
+        KsiazkaAdresowa::wywolajFunkcjeStartowe();
+    } else {
+        KsiazkaAdresowa::wyswietlMenuGlowne();
+        KsiazkaAdresowa::wywolajFunkcjeGlowne();
+    }
+}
+
+void KsiazkaAdresowa::wyswietlMenuStartowe() {
+    system("cls");
+    cout << "1. Logowanie" <<endl;
+    cout << "2. Rejestracja" <<endl;
+    cout << "9. Zamknij program" <<endl <<endl;
+    cout << "Twoj wybor: ";
+}
+void KsiazkaAdresowa::wywolajFunkcjeStartowe() {
+    char wybor;
+    wybor = MetodyPomocnicze::wczytajZnak();
+    switch(wybor) {
+    case '1': {
+        logowanieUzytkownika();
+    }
+    break;
+    case '2': {
+        rejestracjaUzytkownika();
+    }
+    break;
+    case '9': {
+        system("cls");
+        exit(0);
+    }
+    break;
+    }
+}
+
+void KsiazkaAdresowa::wyswietlMenuGlowne() {
+    //int ileOsob = osoby.end()-osoby.begin();
+    system("cls");
+    cout << "KSIAZKA ADRESOWA" <<endl;
+    //cout << "(Zarejestrowanych wpisow: " << ileOsob <<')' <<endl;
+    cout << "1. Dodaj adresata." <<endl;
+    cout << "2. Wyszukaj po imieniu." <<endl;
+    cout << "3. Wyszukaj po nazwisku." <<endl;
+    cout << "4. Wyswietl wszystkich adresatow." <<endl;
+    cout << "5. Usun adresata." <<endl;
+    cout << "6. Edytuj adresata." <<endl;
+    cout << "7. Zmien haslo." <<endl;
+    cout << "9. Wyloguj" <<endl <<endl;
+    cout << "Twoj wybor: ";
+}
+
+void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
+    char wybor;
+    wybor = MetodyPomocnicze::wczytajZnak();
+    switch(wybor) {
+    case '1': {
+        dodajAdresata();
+    }
+    break;
+    case '2': {
+        adresatManager->znajdzPoImieniu();
+    }
+    break;
+    case '3': {
+        adresatManager->znajdzPoNazwisku();
+    }
+    break;
+    case '4': {
+        wyswietlWszystkichAdresatow();
+    }
+    break;
+    case '5': {
+        adresatManager->usunAdresata();
+    }
+    break;
+    case '6': {
+        adresatManager->edytujAdresata();
+    }
+    break;
+    case '7': {
+        zmianaHaslaZalogowanegoUzytkownika();
+    }
+    break;
+    case '9': {
+        wylogowanieUzytkownika();
+    }
+    break;
+    }
+}
+

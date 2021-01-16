@@ -9,26 +9,19 @@ using namespace std;
 
 int main() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "KsiazkaAdresowa.txt");
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.logowanieUzytkownika();
-    ksiazkaAdresowa.wyswietlIdZalogowanegoUzytkownika();
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    //ksiazkaAdresowa.dodajAdresata();
-    ksiazkaAdresowa.wylogowanieUzytkownika();
-
+    while (true) {
+        ksiazkaAdresowa.wyswietlMenu();
+    }
     return 0;
 }
 
-
-
-
 int maintest() {        //testowanie funkcji
-    AdresatManager adresatManager("Ksiazka_adresowa_testowa.txt", 1);
+    AdresatManager adresatManager("KsiazkaAdresowa.txt", 1);
     adresatManager.wyswietlWszystkichAdresatow();
-    adresatManager.dodajAdresata();
+    adresatManager.usunAdresata();
+    adresatManager.edytujAdresata();
+    adresatManager.wyswietlWszystkichAdresatow();
+    //adresatManager.dodajAdresata();
 
     return 0;
 }

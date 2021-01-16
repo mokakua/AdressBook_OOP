@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class UzytkownikManager{
+class UzytkownikManager {
 
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
