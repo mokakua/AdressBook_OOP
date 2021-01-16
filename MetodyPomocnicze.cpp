@@ -50,7 +50,7 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita(){
     return liczba;
 }
 
-char MetodyPomocnicze::wczytajZnak(){
+char MetodyPomocnicze::wczytajZnak() {
 
     string wejscie = "";
     char znak  = {0};

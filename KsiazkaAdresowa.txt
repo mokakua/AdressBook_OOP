@@ -9,7 +9,8 @@
 15|1|Najnowszy|Nabytek|Ksiazki|Adresowej|Michala|
 16|4|Michal|Kowalski|123809|@wp.pl|Jelenia Gora|
 17|4|Tomek|Nowak|098765|@gmail.com|Wielun|
-18|1|Nowy|Ziomek|do|kolekcji|micha|
 19|1|Tomasz|Rokita|123456798|@onet.pl|Baltycka 10a|
 20|5|Rozalia|Pisarska|brak|brak|Kalisz|
-21|1|Michal|Pis|21|21|21|
+21|1|Michal|Pis|21|michalek@wp.pl|21|
+22|1|Michal|Pisarski|123789 456|@gmail.com|Worclaw|
+23|6|Artur|Nowakowki|123456789|@programista.pl|Nowa Ruda|

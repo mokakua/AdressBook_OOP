@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int maintest() {
+int main() {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "KsiazkaAdresowa.txt");
     while (true) {
         ksiazkaAdresowa.wyswietlMenu();
@@ -15,12 +15,13 @@ int maintest() {
     return 0;
 }
 
-int main() {        //testowanie funkcji
+int maintest() {        //testowanie funkcji
     AdresatManager adresatManager("KsiazkaAdresowa.txt", 1);
     adresatManager.wyswietlWszystkichAdresatow();
     adresatManager.usunAdresata();
+    adresatManager.edytujAdresata();
     adresatManager.wyswietlWszystkichAdresatow();
-    adresatManager.dodajAdresata();
+    //adresatManager.dodajAdresata();
 
     return 0;
 }

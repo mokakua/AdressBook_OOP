@@ -76,7 +76,7 @@ void KsiazkaAdresowa::wyswietlMenuStartowe() {
 }
 void KsiazkaAdresowa::wywolajFunkcjeStartowe() {
     char wybor;
-    wybor = pobierzZnak();
+    wybor = MetodyPomocnicze::wczytajZnak();
     switch(wybor) {
     case '1': {
         logowanieUzytkownika();
@@ -112,7 +112,7 @@ void KsiazkaAdresowa::wyswietlMenuGlowne() {
 
 void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     char wybor;
-    wybor = pobierzZnak();
+    wybor = MetodyPomocnicze::wczytajZnak();
     switch(wybor) {
     case '1': {
         dodajAdresata();
@@ -123,7 +123,7 @@ void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     }
     break;
     case '3': {
-       adresatManager->znajdzPoNazwisku();
+        adresatManager->znajdzPoNazwisku();
     }
     break;
     case '4': {
@@ -135,7 +135,7 @@ void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     }
     break;
     case '6': {
-        //edytujAdresata(osoby);
+        adresatManager->edytujAdresata();
     }
     break;
     case '7': {
@@ -147,18 +147,5 @@ void KsiazkaAdresowa::wywolajFunkcjeGlowne() {
     }
     break;
     }
-}
-
-char KsiazkaAdresowa::pobierzZnak() {
-    string wejscie = "";
-    getline(cin,wejscie);
-    char znak = 0;
-    if (wejscie.length() == 1) {
-        znak = wejscie[0];
-    } else {
-        cout << "Za duzo znakow. Podaj prawidlowa liczbe."<<endl;
-        Sleep(1000);
-    }
-    return znak;
 }
 

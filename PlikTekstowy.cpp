@@ -1,7 +1,7 @@
 #include "PlikTekstowy.h"
 
 PlikTekstowy::PlikTekstowy(string nazwaPliku)
-:NAZWA_PLIKU(nazwaPliku){}
+    :NAZWA_PLIKU(nazwaPliku) {}
 
 
 bool PlikTekstowy::czyPlikJestPusty(fstream& plikTekstowy) {

@@ -6,13 +6,14 @@
 
 using namespace std;
 
-class PlikTekstowy{
+class PlikTekstowy {
 protected:
     const string NAZWA_PLIKU;
 
+    bool czyPlikJestPusty(fstream& plikTekstowy);
 public:
     PlikTekstowy(string nazwaPliku);
-    bool czyPlikJestPusty(fstream& plikTekstowy);
+
 };
 #endif
 
